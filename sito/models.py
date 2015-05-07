@@ -2,17 +2,17 @@ from django.db import models
 from django import forms
 from image_cropping import ImageRatioField, ImageCropField
 
-# Create your models here.
+
 class Category(models.Model):
     title = models.CharField("Titolo:", max_length=100)
     description = models.TextField(blank=True, null=True, verbose_name="Ingredienti del Piatto")
 
+    class Meta:
+    	verbose_name_plural = "Categorie del Menu"
+
     def __unicode__(self):
 		return self.title
-			
-	class Meta:
-		verbose_name_plural = "Galleria Immagini"
-        ordering = ['-id']
+
 
 
 
@@ -38,20 +38,24 @@ class Immagini(models.Model):
 
 
 class Food(models.Model):
-    categoria = models.ForeignKey(Category, null=True, blank=True)
     title = models.CharField(blank=True, null=True, max_length=255, verbose_name="Titolo Piatto")
+    categoria = models.ForeignKey(Category, null=True, blank=True)
     description = models.TextField(blank=True, null=True, verbose_name="Ingredienti del Piatto")
-    price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    price = models.DecimalField('Prezzo', max_digits=10, decimal_places=2, blank=True, null=True)
     active = models.BooleanField(default=True, verbose_name="Pubblicato")
-    def __unicode__(self):
-    	return self.title
-	class Meta:
+
+    class Meta:
 		verbose_name_plural = "Menu del Ristorante"
+    
+    def __unicode__(self):
+    	#return self.title
+    	return u'%s %s %s' % (self.title, self.price, self.categoria.title)
 
 
 
 class News(models.Model):
-	title = models.CharField(blank=True, null=True, max_length=255, verbose_name="Titolo")
+	title = models.CharField(max_length=255, verbose_name="Titolo")
+	subtitle = models.CharField(blank=True, null=True, max_length=255, verbose_name="Titolo")
 	active = models.BooleanField(default=False, verbose_name="Pubblica?")
 	body = models.TextField(blank=True, null=True, verbose_name="descrizione")
 	image = models.ImageField(blank=True, null=True, upload_to='uploaded_images', verbose_name="Immagine di Copertina")
@@ -77,14 +81,15 @@ class Page(models.Model):
     croppingslider = ImageRatioField('image', '500x469', verbose_name="Slider")
     cropping = ImageRatioField('image', '500x469', verbose_name="Cropping")
     croppingfree = ImageRatioField('image', '500x469', free_crop=True, verbose_name="Free Crop")
+    #galleria = models.ManyToManyField(Immagini, null=True, blank=True, verbose_name="Seleziona Immagini Galleria")
     galleria = models.ManyToManyField(Immagini, null=True, blank=True, verbose_name="Seleziona Immagini Galleria")
     pub_date = models.DateTimeField('date published')
 
-    def __unicode__(self):
-        return self.titolo
+    class Meta:
+    	verbose_name_plural = "Pagine"
 
-	class Meta:
-		verbose_name_plural = "Pagine"
+    def __unicode__(self):
+        return self.title
 
 
 

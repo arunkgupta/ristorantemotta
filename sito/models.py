@@ -15,7 +15,6 @@ class Category(models.Model):
 
 
 
-
 class Immagini(models.Model):
 	titolo = models.CharField(max_length=100, verbose_name="Titolo del Progetto:")
 	image = models.ImageField(blank=True, null=True, upload_to='uploaded_images')
@@ -90,9 +89,3 @@ class Page(models.Model):
 
     def __unicode__(self):
         return self.title
-
-
-
-
-
-

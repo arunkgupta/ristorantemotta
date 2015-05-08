@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<!-- Place somewhere in the <body> of your page -->
+
+
+
+
+<section id="pagina">
+	<div class="col-xs-12 dettaglio">
+		<div class="flexslider">
+		  <ul class="slides">
+			{% for immagini in page.galleria.all %}
+			{% load cropping%}
+		    <li>
+				<img src="{% cropped_thumbnail immagini "croppingslide" %}" class="img-responsive img-top">
+		    </li>
+			{% endfor %}
+		  </ul>
+		</div>
+		<h2>{{page.title}}</h2>
+		<p>{{page.body|safe}}</p>
+	</div>
+
+</section>
+
+
+<script type="text/javascript">
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+</script>
+
+{% endblock %}

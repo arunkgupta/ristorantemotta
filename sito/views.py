@@ -26,3 +26,8 @@ def newsdettaglio(request, post_id):
     news = News.objects.get(pk=post_id)
     context = {'news': news}
     return render_to_response('news_dettaglio.html', context, context_instance=RequestContext(request))
+
+def pagina(request, post_id):
+    page = Page.objects.get(pk=post_id)
+    context = {'page': page}
+    return render_to_response('pagina.html', context, context_instance=RequestContext(request))

@@ -23,6 +23,7 @@ urlpatterns = [
 	url(r'^$', views.HomePage, name='home'),
     url(r'^/news/$', views.newslist, name='news'),
     url(r'^news/(?P<post_id>\d+)/$', views.newsdettaglio, name='newsdettaglio'),
+    url(r'^(?P<post_id>\d+)/$', views.pagina, name='pagina'),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

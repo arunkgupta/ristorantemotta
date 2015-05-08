@@ -1,1 +1,19 @@
-<h1>CIAO CIAO</h1>
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section id="vticker">
+	<div class="news">
+	  	{% for news in news_list|slice:':1' %}
+	    	<h2>News</h2>
+	    	<h3>{{news.title}} - {{news.subtitle}}</h3>
+	    	<p>{{news.body|truncatechars:250}}<p>
+	    	<a href="{% url 'newsdettaglio' news.id %}" class="btn btn-primary xs-btn">Continua...</a>
+	    {% endfor %}
+	</div>
+</section>
+
+
+
+{% endblock %}

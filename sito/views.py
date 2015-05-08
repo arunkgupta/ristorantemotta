@@ -11,6 +11,18 @@ from django.core.mail import send_mail
 # Create your views here.
 
 def HomePage(request):
-	return render_to_response('index.html', context_instance=RequestContext(request))
+	news_list = News.objects.all().order_by('-pub_date')[:5]
+	context = {'news_list':news_list}
+	return render_to_response('index.html', context, context_instance=RequestContext(request))
 	#return render_to_response('index.html', context, context_instance=RequestContext(request))
+	#return render(request, 'index.html', context)
 
+def newslist(request):
+	news_list = News.objects.all().order_by('-pub_date')
+	context = {'news_list':news_list}
+	return render(request, 'news.html', context)
+
+def newsdettaglio(request, post_id):
+    news = News.objects.get(pk=post_id)
+    context = {'news': news}
+    return render_to_response('news_dettaglio.html', context, context_instance=RequestContext(request))

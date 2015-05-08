@@ -54,19 +54,18 @@ class Food(models.Model):
 
 class News(models.Model):
 	title = models.CharField(max_length=255, verbose_name="Titolo")
-	subtitle = models.CharField(blank=True, null=True, max_length=255, verbose_name="Titolo")
+	subtitle = models.CharField(blank=True, null=True, max_length=255, verbose_name="Sottotitolo")
 	active = models.BooleanField(default=False, verbose_name="Pubblica?")
 	body = models.TextField(blank=True, null=True, verbose_name="descrizione")
 	image = models.ImageField(blank=True, null=True, upload_to='uploaded_images', verbose_name="Immagine di Copertina")
-	thumb = ImageRatioField('image', '1200x1125', free_crop=True, verbose_name="Miniatura", help_text="Ritaglio Immagini Miniatura")
-	slider = ImageRatioField('image', '1170x500', free_crop=True, verbose_name="Slider", help_text="Ritaglio Immagini per Slider")
-	cropping = ImageRatioField('image', '1200x1125', free_crop=True, verbose_name="IMG Crop", help_text="Immagine Croppata")
+	thumb = ImageRatioField('image', '1200x1125', verbose_name="Miniatura", help_text="Ritaglio Immagini Miniatura")
+	slider = ImageRatioField('image', '1170x1170', verbose_name="Slider", help_text="Ritaglio Immagini per Slider")
+	cropping = ImageRatioField('image', '1200x1125', verbose_name="IMG Crop", help_text="Immagine Croppata")
 	freecropping = ImageRatioField('image', '1200x1125', free_crop=True, help_text="Ritaglio Immagini Libero")
 	pub_date = models.DateTimeField('date published')
 
 	def __unicode__(self):
-		return self.titolo
-
+		return self.title
 	class Meta:
 		verbose_name_plural = "News - Eventi"
 

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<section id="news">
+	{% for news in news_list %}
+	<div class="col-xs-12 notizia">
+		<div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
+			{% load cropping %}
+			<img src="{% cropped_thumbnail news "thumb" %}" class="img-responsive img-circle">
+		</div>
+		<div class="col-xs-12 col-sm-10 col-md-9 col-lg-9">
+			<h2>{{news.title}}</h2>
+			<h4>{{news.subtitle}}</h4>
+			<p>{{news.body|safe|truncatechars:250}}</p>
+			<a href="{% url 'newsdettaglio' news.id %}" class="btn btn-primary xs-btn">Continua...</a>
+		</div>
+	</div><!-- col-xs-12 -->
+	{% endfor %}
+</section>
+
+
+
+{% endblock %}

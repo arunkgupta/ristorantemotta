@@ -1,0 +1,21 @@
+  {% load staticfiles %}
+  <section id="navigation">
+    <ul class="nav nav-pills nav-stacked">
+      <li>
+        <a href="{% url 'home' %}">
+          <img src="{% static 'img/logo.png' %}" class="img-responsive" title="logo motta">
+        </a>
+      </li>
+      <li><hr></li>
+      <li role="presentation"><a href="{% url 'home' %}"><i class="fa fa-home"> Home</i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-cutlery"> Ristorante</i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-list-alt"> Menù</i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-bed"> Albergo</i></a></li>
+      <li role="presentation"><a href="{% url 'news' %}"><i class="fa fa-calendar"> Eventi</i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-video-camera"> Webcam </i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-camera"> Fotogallery</i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-map-marker"> Dove Siamo</i></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-envelope-o"> Contatti</i></a></li>
+      <li><br></li>
+    </ul>
+  </section><!-- close Navigation -->

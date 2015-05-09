@@ -31,3 +31,8 @@ def pagina(request, post_id):
     page = Page.objects.get(pk=post_id)
     context = {'page': page}
     return render_to_response('pagina.html', context, context_instance=RequestContext(request))
+
+def galleria(request):
+	immagini_list = Immagini.objects.all()
+	context = {'immagini_list':immagini_list}
+	return render(request, 'galleria.html', context)

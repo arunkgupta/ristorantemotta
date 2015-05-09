@@ -36,3 +36,8 @@ def galleria(request):
 	immagini_list = Immagini.objects.all()
 	context = {'immagini_list':immagini_list}
 	return render(request, 'galleria.html', context)
+
+def menulist(request):
+	menu_list = Food.objects.all()
+	context = {'menu_list':menu_list}
+	return render(request, 'lista.html', context)

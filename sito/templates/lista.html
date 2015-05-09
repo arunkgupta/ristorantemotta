@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section id="lista">
+
+<div role="tabpanel" class="col-xs-12 cibo">
+
+  <!-- Nav tabs -->
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#antipasti" aria-controls="antipasti" role="tab" data-toggle="tab">ANTIPASTI</a></li>
+    <li role="presentation"><a href="#primi_piatti" aria-controls="primi_piatti" role="tab" data-toggle="tab">PRIMI PIATTI</a></li>
+    <li role="presentation"><a href="#secondi_piatti" aria-controls="secondi_piatti" role="tab" data-toggle="tab">SECONDI PIATTI</a></li>
+    <li role="presentation"><a href="#dolci" aria-controls="dolci" role="tab" data-toggle="tab">DOLCE</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="antipasti">
+    	<table class="table table-striped">
+	      <tbody>
+	      	{% for menu in menu_list %}
+	      	{% if menu.categoria_id == 1 %}
+	        <tr>
+	          <td>
+	          	<h4>{{menu.title}}</h4>
+	          	{% if menu.description %}<p>{{menu.description|safe}}</p> {% endif %}
+	          </td>
+	          <td>
+	          	<h4>{% if menu.price %} €. {{menu.price}} {% endif %}</h4></td>
+	        </tr>
+	        {% endif %}
+	        {% endfor %}
+	      </tbody>
+		</table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="primi_piatti">...</div>
+    <div role="tabpanel" class="tab-pane" id="secondi_piatti">...</div>
+    <div role="tabpanel" class="tab-pane" id="dolci">...</div>
+  </div>
+
+</div><!-- tabpanel -->
+
+
+
+</section>
+
+
+{% endblock %}
+
+
+
+

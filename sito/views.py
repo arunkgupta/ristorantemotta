@@ -41,3 +41,6 @@ def menulist(request):
 	menu_list = Food.objects.all()
 	context = {'menu_list':menu_list}
 	return render(request, 'lista.html', context)
+
+def location(request):
+	return render_to_response('location.html', context_instance=RequestContext(request))

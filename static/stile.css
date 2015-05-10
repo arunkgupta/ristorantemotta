@@ -216,3 +216,16 @@ body {
 	margin-top:0px;
 	margin-bottom:0px;
 }
+
+
+
+/* ---- LOCATION ---- */
+
+#map-canvas {
+	width:100%;
+	height:500px;
+	position: absolute;
+	margin-top: 30px;
+	border-radius:15px;
+
+}

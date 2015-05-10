@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^(?P<post_id>\d+)/$', views.pagina, name='pagina'),
     url(r'^/menu/$', views.menulist, name='menu'),
     url(r'^/galleria/$', views.galleria, name='galleria'),
+    url(r'^/dove_siamo/$', views.location, name='location'),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

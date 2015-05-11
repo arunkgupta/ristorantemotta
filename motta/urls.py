@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^/menu/$', views.menulist, name='menu'),
     url(r'^/galleria/$', views.galleria, name='galleria'),
     url(r'^/dove_siamo/$', views.location, name='location'),
+    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^success/$', views.success, name='success'),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

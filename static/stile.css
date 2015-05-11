@@ -229,3 +229,31 @@ body {
 	border-radius:15px;
 
 }
+
+
+
+/* ---- CONTACT ---- */
+
+#contact .formato {
+	margin-top:30px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+	padding-top:20px;
+	padding-bottom:20px;
+	color: #003153;
+}
+
+
+/* ---- SUCCESS ---- */
+ #success .formato {
+	margin-top:30px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+	padding-top:20px;
+	padding-bottom:20px;
+	color: #003153;
+}
+
+#success h3 {
+	text-align: center;
+}

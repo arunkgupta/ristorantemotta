@@ -1,0 +1,40 @@
+  {% load staticfiles %}
+<section id="navigation">
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          MENU'
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+          <ul class="nav nav-pills nav-stacked">
+            <li>
+              <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" class="img-responsive" title="logo motta">
+              </a>
+            </li>
+            <li><hr></li>
+            <li role="presentation"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+            <li role="presentation"><a href="{% url 'pagina' 1 %}"><i class="fa fa-cutlery"></i> Ristorante</a></li>
+            <li role="presentation"><a href="{% url 'menu' %}"><i class="fa fa-list-alt"></i> Menù</a></li>
+            <li role="presentation"><a href="{% url 'pagina' 2 %}"><i class="fa fa-bed"></i> Albergo</a></li>
+            <li role="presentation"><a href="{% url 'news' %}"><i class="fa fa-calendar"></i> Eventi</a></li>
+            <li role="presentation"><a href="#"><i class="fa fa-video-camera"></i> Webcam</a></li>
+            <li role="presentation"><a href="{% url 'galleria' %}"><i class="fa fa-camera"></i>  Fotogallery</a></li>
+            <li role="presentation"><a href="{% url 'location' %}"><i class="fa fa-map-marker"></i>  Dove Siamo</a></li>
+            <li role="presentation"><a href="{% url 'contact' %}"><i class="fa fa-envelope-o"></i>  Contatti</a></li>
+            <li><br></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  </section><!-- close Navigation -->
+
+  
+  

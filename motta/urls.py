@@ -21,12 +21,12 @@ from django.conf import settings
 
 urlpatterns = [
 	url(r'^$', views.HomePage, name='home'),
-    url(r'^/news/$', views.newslist, name='news'),
+    url(r'^news/$', views.newslist, name='news'),
     url(r'^news/(?P<post_id>\d+)/$', views.newsdettaglio, name='newsdettaglio'),
     url(r'^(?P<post_id>\d+)/$', views.pagina, name='pagina'),
-    url(r'^/menu/$', views.menulist, name='menu'),
-    url(r'^/galleria/$', views.galleria, name='galleria'),
-    url(r'^/dove_siamo/$', views.location, name='location'),
+    url(r'^menu/$', views.menulist, name='menu'),
+    url(r'^galleria/$', views.galleria, name='galleria'),
+    url(r'^dove_siamo/$', views.location, name='location'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^success/$', views.success, name='success'),
     url(r'^admin/', include(admin.site.urls)),

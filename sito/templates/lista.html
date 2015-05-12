@@ -36,9 +36,60 @@
 	      </tbody>
 		</table>
     </div>
-    <div role="tabpanel" class="tab-pane" id="primi_piatti">...</div>
-    <div role="tabpanel" class="tab-pane" id="secondi_piatti">...</div>
-    <div role="tabpanel" class="tab-pane" id="dolci">...</div>
+    <div role="tabpanel" class="tab-pane" id="primi_piatti">
+      <table class="table table-striped">
+        <tbody>
+          {% for menu in menu_list %}
+          {% if menu.categoria_id == 2 %}
+          <tr>
+            <td>
+              <h4>{{menu.title}}</h4>
+              {% if menu.description %}<p>{{menu.description|safe}}</p> {% endif %}
+            </td>
+            <td style="width: 100px;">
+              <h4>{% if menu.price %} €. {{menu.price}} {% endif %}</h4></td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="secondi_piatti">
+      <table class="table table-striped">
+        <tbody>
+          {% for menu in menu_list %}
+          {% if menu.categoria_id == 3 %}
+          <tr>
+            <td>
+              <h4>{{menu.title}}</h4>
+              {% if menu.description %}<p>{{menu.description|safe}}</p> {% endif %}
+            </td>
+            <td>
+              <h4>{% if menu.price %} €. {{menu.price}} {% endif %}</h4></td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="dolci">
+      <table class="table table-striped">
+        <tbody>
+          {% for menu in menu_list %}
+          {% if menu.categoria_id == 4 %}
+          <tr>
+            <td>
+              <h4>{{menu.title}}</h4>
+              {% if menu.description %}<p>{{menu.description|safe}}</p> {% endif %}
+            </td>
+            <td>
+              <h4>{% if menu.price %} €. {{menu.price}} {% endif %}</h4></td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+    </table>
+    </div>
   </div>
 
 </div><!-- tabpanel -->

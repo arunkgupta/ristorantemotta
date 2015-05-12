@@ -4,6 +4,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+	font-family: 'Roboto', sans-serif;
 }
 
 
@@ -27,8 +28,9 @@ body {
 #navigation > a, a:hover, a:link {
 	color: #003153;
 	/*font-family: 'Bad Script', cursive;*/
-	font-family: 'Courgette', cursive;
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+	font-weight: bold;
 	padding-top:0px;
 	padding-bottom:0px;
 }
@@ -36,6 +38,26 @@ body {
 #navigation .img-responsive {
 	width: 100%;
 }
+
+#navigation {
+	font-family: 'Roboto', sans-serif;
+}
+
+
+#navigation .panel-default {
+	margin-top: 30px;
+	background-color: rgba(255,255,255,0.8);
+}
+
+#navigation .panel-body {
+	background-color: transparent;
+}
+
+#navigation .panel-heading {
+	background-color: transparent;
+}
+
+
 
 
 /* ---- Ticker News ---- */
@@ -206,6 +228,8 @@ body {
 #lista .cibo {
 	margin-top:30px;
 	color: #003153;
+	font-family: 'Courgette', cursive;
+
 }
 
 #lista .tab-content {
@@ -217,6 +241,18 @@ body {
 	margin-bottom:0px;
 }
 
+#lista li {
+	background-color: rgba(255, 255, 255, 0.7);
+	margin-right: 10px;
+	padding:0px;
+	border-radius: 10px 10px 0 0;
+}
+
+#lista li a {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
 
 
 /* ---- LOCATION ---- */
@@ -256,4 +292,16 @@ body {
 
 #success h3 {
 	text-align: center;
+}
+
+
+
+
+
+@media (max-width: 798px) {
+	
+	#vticker .news {
+		margin-top:20px;
+	}
+
 }
